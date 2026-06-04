@@ -11,15 +11,21 @@ import shap
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 import seaborn as sns
+import streamlit as st
+from PIL import Image
 import warnings
 warnings.filterwarnings("ignore")
 
 from sklearn.metrics import ConfusionMatrixDisplay
 
 # ─── Page config ──────────────────────────────────────────────────────────────
+
+# Load the image
+page_icon = Image.open("Logo.png")
+
 st.set_page_config(
-    page_title="DiabetesAI Pro",
-    page_icon="🩺",
+    page_title="AI-Diabetes Screening App",
+    page_icon=page_icon,   # Use image instead of emoji
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -145,7 +151,7 @@ with st.sidebar:
 # PAGE 1 — OVERVIEW
 # ══════════════════════════════════════════════════════════════════════════════
 if page == "🏠  Overview":
-    st.markdown("## 🩺 DiabetesAI Pro — Clinical Decision Support Dashboard")
+    st.markdown("## 🩺 AI-Diabetes Screening — Clinical Decision Support Dashboard")
     st.markdown("*Predictive modelling with Explainable AI for diabetes risk assessment*")
     st.markdown("---")
 
